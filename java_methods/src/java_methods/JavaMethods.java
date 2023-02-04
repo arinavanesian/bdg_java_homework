@@ -44,15 +44,46 @@ public class JavaMethods {
 		return sum = num + addNum(num - 1);
 	}
 
+	public float foo(float a, float b) {
+		return a;
+	}
 	public static void main(String[] args) {
-//		JavaMethods j = new JavaMethods();
-			hello(false, false);
+		
+		JavaMethods j = new JavaMethods();
+			j.hello(false, false);
 			System.out.println(print0(1, 2));		                  
 			System.out.println(returnChar('s'));
 			System.out.println(returnFloat(2.4f, 1.2f));
 			System.out.println(addNum(5));
+//			byte, short, char, int , long, float, double 
+//			byte y = 2;
+//			byte x = 2;
+//			boolean z = x + y;
+//			short z = x + y;
+//			char z = x + y;
+//			byte  z = x + y;
+//			long z = x + y;
+//			float  z = x + y;
+//			System.out.println(z);
 			
-	}		// TODO Auto-generated method stub
-	}
 
+		 
+//			boolean keepGoing = true;
+//			int result = 15, i = 10;
+//			do {
+//			i--;
+//			if(i==8) keepGoing = false; //i = 9, 8, keepGoing =false
+//			result -= 2; //13, 11
+//			} while(keepGoing); //true, 
+//			System.out.println(result);  //11
 
+			int count = 0;
+			ROW_LOOP: for(int row = 1; row <=3; row++) // 
+			for(int col = 1; col <=2 ; col++) {  //
+			if(row * col % 2 == 0) continue ROW_LOOP; // 2* 2, 3*3
+			count++; //1, 2
+			}
+			System.out.println(count); 
+}
+
+}
