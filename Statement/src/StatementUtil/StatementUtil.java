@@ -149,11 +149,11 @@ public class StatementUtil {
 //		 int intstr = Integer.parseInt(string);
 //		 intstr % 10
 //		 return sum;
-	 System.out.println((intstr%10)); //5
-	 System.out.println((intstr%100 - intstr%10)/10); //4
-	 System.out.println((intstr%1000 - intstr%100)/100); //3
-	 System.out.println((intstr%10000 - intstr%1000)/1000); //3
-	 System.out.println((intstr%100000 - intstr%10000)/10000); //3
+//	 System.out.println((intstr%10)); //5
+//	 System.out.println((intstr%100 - intstr%10)/10); //4
+//	 System.out.println((intstr%1000 - intstr%100)/100); //3
+//	 System.out.println((intstr%10000 - intstr%1000)/1000); //3
+//	 System.out.println((intstr%100000 - intstr%10000)/10000); //3
 //	 }
 //		 for(int i = 0; i < string.length(); i++ ) {
 //			  Pattern pattern = Pattern.compile(" ");
@@ -183,7 +183,7 @@ public class StatementUtil {
 		 int z = 15;
 //         it's an infinite loop
          while (z > 10) { //11
-           z--; // 10
+           z=z--; // 10
          } 
          
          System.out.println(z); //10
