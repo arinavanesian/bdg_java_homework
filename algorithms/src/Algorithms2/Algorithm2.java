@@ -1,6 +1,8 @@
-package Algorithms;
+package Algorithms2;
 
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 public class Algorithm2 {
 //Q1) Multiplication table
@@ -22,20 +24,25 @@ static //Q2
 		int base = sc.nextInt();
 		System.out.println("Insert the power nunber: ");
 		int pow = sc.nextInt();
-		sc.close();
 		int result =1;
 		for(int i=0; i < pow; i++ ) {
 			result *=base;
 		}
+		sc.close();
 		return  result;
 	}
-static //123
-//3 *100 + 2* 10 +1 
+//Q3
+	/*
+	 * Write a program that prompts the user to input an integer and then outputs
+	 * the number with the digits reversed. For example, if the input is 12345, the
+	 * output should be 54321
+	 */
+static 
+ 
 	 int reverseNum() {
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Enter a number: ");
 	int answer = sc.nextInt();
-	sc.close();
 	int revNumb = 0;
 	while(answer !=0) {
 		revNumb = revNumb * 10;
@@ -67,21 +74,37 @@ static void primeFinder() {
 		
 	}while(repeat == "Y");
 }
-static void rightTri() {
-	int count =0;
-	while(count <4) {
-		int z =4;
-		for(; z>0; z-- ) {
-			System.out.print(" ");		
-		}
-		for(int i =0; i<4; i++ ) {
-			System.out.print("*");
-		}	
-		count++;
-		System.out.println();
+
+/*
+ * Question 4 Write a program that prompts the user to input a positive integer.
+ * It should then output a message indicating whether the number is a prime
+ * number.
+ */
+static boolean positivePrime() {
+	boolean isPrime = true;
+	LOOP: while(isPrime) {
+		int positive = Integer.parseInt(JOptionPane.showInputDialog("Please enter a positive number below"));
+		if(positive <= 0) {
+			System.out.println("Enter a positive number (larger than 0)");
+			continue LOOP;
 	}
-	}
+		
+			for(int i =2; i <=(int) (positive/2); i++) {
+				if(positive % 2 ==0) {
+					JOptionPane.showMessageDialog(null, positive +" is not prime.");
+					return isPrime =false;
+				}
+				else {					
+					JOptionPane.showMessageDialog(null, positive +" is prime.");
+					return isPrime;
+				}
+			
 	
+		}
+			return isPrime;
+	}
+	return isPrime;
+}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		multiplicate();
@@ -89,6 +112,10 @@ static void rightTri() {
 //		System.out.println(reverseNum());
 //		primeFinder();
 //		rightTri();	
+		
+//		System.out.println(reverseNum());
+		System.out.println(positivePrime());
+//		System.out.println(pow());
 	}
 
 }
