@@ -3,7 +3,31 @@ package Quest;
 import java.util.Arrays;
 
 public class Quest {
-
+//{1, 2, 3}
+//{1, 2, 3, 4}
+	int sumA(int[] a, int[] b) {
+		int shortest;
+		int longest;
+		int[] newA = new int[shortest +(longest -shortest)];
+		if(a.length > b.length) {
+			shortest = b.length;
+			longest = a.length;
+		}
+		else {			
+			shortest = a.length;
+			longest = b.length;
+		} 
+		for(int i= 0;  i < longest;i++ ) {
+//			if()
+//			longest - shortest = k;
+//			newA.length - k = a[i] ;
+		for(int j= 0;  i < shortest; j++) {
+			int sum = a[i] + b[j];
+			newA[i] = sum;
+			}
+		}
+//		return
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		

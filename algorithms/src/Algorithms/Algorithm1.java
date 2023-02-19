@@ -1,9 +1,14 @@
 package Algorithms;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Algorithm1 {
+
 	
 	static void randomEvenOdd() {
 		int min = 0;
@@ -196,18 +201,167 @@ static void guessGame() {
 			System.out.println("You guest right! It was: " + guess);
 			scs.close();
 	}
-static void sine() {
+//sinx = x - x3/3 + x5/5
+static int factorOf(int n) {
+	int fact   = 1;
+	if(n ==1)
+		return fact;
+	else {
+		 fact  =factorOf(n-1) * n;
+	}
+		return fact;
+}
+static double sine() {
 	int sum =0;
 	System.out.println("Input numbers between -1 and 1: ");
 	Scanner sc = new Scanner(System.in);
-	int x = sc.nextInt();
+	double x = sc.nextDouble();
 	System.out.println("Input n: ");
 	int n = sc.nextInt();
-//	for(; x)
-//	Math.pow(x, n)
-//sum
+	for(int i = 0; i <= n; i++) {
+		int sign =(i %2 != 0) ? -1 : 1;
+	x += sign * (Math.pow(x, (2*i+1))/factorOf(2*i+1));
+//						x =  (Math.pow(x, i+1)/(i+1)) * Math.pow(-1, i); 
+	}
+return x;
+}
+
+public static int theLargestPrimeFactor(int number) {
+    for (int i = number - 1; i > 1; i--) {
+        if (number % i == 0) {
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    continue;
+                }
+                System.out.println(i);
+                return i;
+            }
+        }
+    }
+    return 0;
+}
+public static void repeat() {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Please write first number: ");
+    int number1 = sc.nextInt();
+    System.out.println("Please write second number: ");
+    int number2 = sc.nextInt();
+    System.out.println("If you wishes to perform the operation again?. if yes enter 1, if no enter 0");
+    int number3 = sc.nextInt();
+    int sum;
+    do {
+        sum = number1 + number2;
+        if (number3 == 1) {
+            repeat();
+        } else {
+            break;
+        }
+    }
+    while (number3 == 0);
+    System.out.println(sum);
+}
+
+public static void positiveNegativeAndZero() {
+    Scanner sc = new Scanner(System.in);
+    int number;
+    int countPositive = 0;
+    int countNegative = 0;
+    int countZero = 0;
+    char choice;
+    do {
+        System.out.print("Enter the number ");
+        number = sc.nextInt();
+        if (number > 0) {
+            countPositive++;
+        } else if (number < 0) {
+            countNegative++;
+        } else {
+            countZero++;
+        }
+        System.out.print("Do you want to continue? if yes enter Y or y "); //print any other key for terminating the process
+        choice = sc.next().charAt(0);
+    } while (choice == 'y' || choice == 'Y'); 
+    System.out.println("Positive numbers: " + countPositive);
+    System.out.println("Negative numbers: " + countNegative);
+    System.out.println("Zero numbers: " + countZero);
+}
+
+
+
+static void repMat(int[][] m){
+for(int i = 1; i < m.length; i++){
+for(int j = i; j < m[0].length; j++){
+int one;
+one = m[i][j];
+m[0][j] = m[j][i];
+m[j][i] = one;
+System.out.println(m[i][j] +" "+ m[j][i]);
+  }
+ }
 }
 	public static void main(String[] args) {
+		ArrayList list = new ArrayList();		
+		list.add("a");
+		list.add(1);
+//		positiveNegativeAndZero();
+		int[] n = {1, 2, 4};
+		int[] m = {1, 2, 4};
+		int[][] matt= {
+				{1,  2,  3, 4},
+				{5,  6,  7,  8},
+				{9,  10, 11, 12},
+				{13, 14, 15, 16}
+		};
+		repMat(matt);
+		System.out.println(n.equals(m));
+//		System.out.println(list);
+//		System.out.println(sine());
+//		theLargestPrimeFactor(11);
+//		String animal = "Animal";
+//		String animal1 = "Animal";
+//		StringBuilder sb = new StringBuilder("Animal");
+////		StringBuilder sb1 = new StringBuilder("Animal");
+////		System.out.println(sb1== sb); //flase
+////		System.out.println(sb1.equals(sb)); //false
+////		System.out.println(animal.equals(animal1));//true
+//		System.out.println(animal==animal1);//true
+//		System.out.println(animal.equals(sb));//false
+////		Algorithm1 al = new Algorithm1();
+////		Algorithm1 alg = new Algorithm1();
+////		System.out.println(al.equals(alg));//false
+//		System.out.println(animal);//true
+//		System.out.println("Animal" + true);//true
+//		System.out.println("Animal" =="Animal");//true
+//		System.out.println("Animal".equals(animal));//true
+//		int[] num =new int[5];
+//		ArrayList<Integer> list = new ArrayList<>();
+//		list.add(1);
+//		list.add(7);
+//		for(Integer f : list)
+//		System.out.println(f);		
+//		 List<Integer> hh = Arrays.asList(10, 4, -1, 5);
+//		 Collections.sort(list);
+//		 Integer array[] = list.toArray(new Integer[4]);
+//		 System.out.println(array[0]);
+//		 List<String> one = new ArrayList<String>();
+//		 one.add("abc");
+//		 List<String> two = new ArrayList<>();
+//		 two.add("abc");
+//		 if (one == two)
+//		 System.out.println("A");
+//		 else if (one.equals(two))
+//		 System.out.println("B");
+//		 else
+//		 System.out.println("C");
+//		 int[]	lowercase	=	new	int[0];
+//		 Integer[]	uppercase	= new Integer[0];	
+//		 System.out.println(lowercase.getClass());
+//		 System.out.println(uppercase.getClass());
+//		 Integer[] lotto = new Integer[4];
+//		 lotto[0] = new Integer(1_000_000);
+//		 lotto[1] = new Integer(999_999);
+//		 for(int i : lotto)
+//			 System.out.println(i);
 //		Random ran = new Random();
 //		int max = 100;
 //		int min = 20;
@@ -216,6 +370,7 @@ static void sine() {
 //		int m = ran.nextInt(10);
 int[] A ={1, 2, 3, 4}; 
 int[] B ={4, 3, 2, 1};
+
 //int[] A ={1, 2, 3, 4}; 
 //int[] B ={9, 8, 7, 6};
 

@@ -105,6 +105,8 @@ static boolean positivePrime() {
 	}
 	return isPrime;
 }
+
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		multiplicate();
@@ -114,7 +116,18 @@ static boolean positivePrime() {
 //		rightTri();	
 		
 //		System.out.println(reverseNum());
-		System.out.println(positivePrime());
+		int[] m = {1, 2, 3};
+		int[] b = {1, 2, 3};
+		String animal =  "animal";
+		String animal2 =  "animal";
+		String animal3 =  animal2;
+		System.out.println(animal.equals(animal2));  //true
+		System.out.println(animal3==animal);  //true
+		System.out.println(animal==animal2);  //true
+		System.out.println(b.equals(m)); 
+	
+		
+//		System.out.println(positivePrime());
 //		System.out.println(pow());
 	}
 
